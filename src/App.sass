@@ -1,0 +1,13 @@
+:root
+  --green: #016936
+
+.ui.card, .ui.cards>.card
+  transition: width 400ms
+  &.active
+    width: 100%
+  .meta
+    &:not(:first-of-type)
+      margin-left: 5px
+    .link
+      &.green
+        color: var(--green)
