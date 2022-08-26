@@ -1,10 +1,11 @@
-const external = ({ href, text, target = "_blank", className = '' }) => {
-  className = [...className.split(' '), 'ui link'].join(' ')
+import "./ExternalLink.sass"
+const ExternalLink = ({ href, children, target = "_blank", className = '' }) => {
+  className = [...className.split(' '), 'external link'].join(' ')
   return (
     <a className={className} href={href} target={target}>
-      {text}
+      {children}
     </a>
   )
 }
 
-export default external
+export default ExternalLink

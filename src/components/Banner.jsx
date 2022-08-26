@@ -1,10 +1,10 @@
 import './Banner.sass'
-const Banner = (props) => {
+const Banner = ({ roundedImgSrc, bgImgSrc, bgImgStyle = {}, caption }) => {
   return (
     <figure className="splash">
-      <div className="avatar"></div>
-      <img src="/images/analytics.jpeg" alt="analytics backdrop" />
-      <figcaption>Recent Projects</figcaption>
+      {roundedImgSrc && <div className="rounded" style={{ backgroundImage: `url(${roundedImgSrc})` }} ></div>}
+      <img src={bgImgSrc} style={{ bgImgStyle }} />
+      <figcaption>{caption}</figcaption>
     </figure>
   )
 }

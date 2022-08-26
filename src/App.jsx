@@ -17,7 +17,6 @@ function App() {
       <BrowserRouter>
         <NavBar />
         <Container>
-
           <Routes>
             <Route path="/" element={<Home projects={projects} />} />
             <Route path="about" element={<AboutMe />} />

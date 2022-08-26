@@ -1,3 +1,5 @@
+
+
 class Project {
   static create(options) { return new Project(options) }
   constructor(options) {
@@ -8,9 +10,11 @@ class Project {
       repoUrl = null,
       deployedUrl = null,
       demoUrl = null,
-      imageUrl = null,
-      packages = [],
-      skills = [],
+      cardImageUrl = null,
+      pageImageUrl = null,
+      packages,
+      apis,
+      skills,
       collaborative = false,
     } = options
     try {
@@ -26,11 +30,15 @@ class Project {
     this.repoUrl = repoUrl
     this.deployedUrl = deployedUrl
     this.demoUrl = demoUrl
-    this.imageUrl = imageUrl
+    this.cardImageUrl = cardImageUrl
+    this.cardImagePos = options.cardImagePos
+    this.pageImageUrl = pageImageUrl
+    this.pageImagePos = options.pageImagePos
     this.packages = packages
+    this.apis = apis
     this.skills = skills
     this.collaborative = collaborative
-    this.imagePos = options.imagePos
+
   }
 
   get slug() { return this.name.toLowerCase().replace(/ /g, '-').replace(/[^a-z-]/g, '') }
@@ -52,7 +60,9 @@ const projects = [
     projectType: 'package',
     repoUrl: 'https://github.com/codewizard-dt/use-form-hook',
     deployedUrl: 'https://www.npmjs.com/package/@codewizard-dt/use-form-hook',
-    imageUrl: '/images/use-form-hook-contain.png'
+    cardImageUrl: '/images/use-form-hook-contain.png',
+    packages: ['React', 'Semantic UI', 'Storybook', 'Rollup', 'Webpack', 'Lodash', 'Typescript'],
+    skills: ['Type definitions', 'Testing', 'Package bundling', 'Package publishing'],
   },
   {
     name: 'Team Dashboard',
@@ -60,65 +70,85 @@ const projects = [
     projectType: 'command line',
     repoUrl: 'https://github.com/codewizard-dt/team-dash-generator',
     demoUrl: 'https://drive.google.com/file/d/1KIdfNCp1l66WatObcvk10h9CovQNAzz9/view?usp=sharing',
-    imageUrl: '/images/team-dash-30x.gif'
+    cardImageUrl: '/images/team-dash-30x.gif',
+    pageImageUrl: '/images/team-dash-10x.gif',
+    packages: ['Inquirer', 'Jest', 'Lodash', 'Validator'],
+    skills: ['Command line scripts', 'Unit testing'],
   },
   {
     name: 'E-Commerce Backend',
     description: 'An Express server using Sequelize ORM to manage Products, Categories, and Product Tags, using RESTful API routes for MySQL CRUD operations',
-    projectType: 'server',
+    projectType: 'back end',
     repoUrl: 'https://github.com/codewizard-dt/e-commerce-orm-backend',
     demoUrl: 'https://drive.google.com/file/d/1AyjUarVAmr_jwiv7Ttbu0q6_UiHei-2_/view?usp=sharing',
-    imageUrl: '/images/e-commerce-orm-10x.gif'
+    cardImageUrl: '/images/e-commerce-orm-10x.gif',
+    packages: ['Express', 'MySQL', 'Sequelize', 'Insomnia'],
+    skills: ['RESTful routes', 'Database management', 'Relational databases', 'Pivot tables', 'API testing']
   },
   {
     name: 'Text Me Maybe',
     description: 'This single-page code editor uses a service worker, is an installable PWA, and persists data via localStorage and IndexedDB. Code is stylized using CodeMirror.',
-    projectType: 'app',
+    projectType: 'full stack',
     repoUrl: 'https://github.com/codewizard-dt/text-me-maybe',
     deployedUrl: 'https://text-me-dt.herokuapp.com/',
-    imageUrl: '/images/text-me-maybe.png'
+    cardImageUrl: '/images/text-me-maybe.png',
+    packages: ['Express', 'Webpack', 'Babel', 'Workbox', 'IDB'],
+    skills: ['Webpack configuration', 'Single page applications (SPA)', 'Progressive web apps (PWA)'],
+    apis: ['IndexedDB']
   },
   {
     name: 'Email Regex Tutorial',
     description: 'A github gist that breaks down a regex pattern for emails. Each regex component is highlighted and its purpose discussed. Variations on the regex are also included.',
     projectType: 'gist',
     repoUrl: 'https://gist.github.com/codewizard-dt/2259499c1a0058f1a0074cf2460035af',
-    imageUrl: '/images/regex.png',
-    imagePos: 'left center'
+    cardImageUrl: '/images/regex.png',
+    cardImagePos: 'left center',
+    skills: ['Communication', 'Sharing knowledge', 'Github gists', 'Regex patterns']
   },
   {
     name: 'Thought Cloud',
     description: `Thought Cloud is an Express server with a RESTful API that allows users to post their "thoughts" and give their "reactions" to other people's thoughts.`,
-    projectType: 'server',
+    projectType: 'backend',
     repoUrl: 'https://github.com/codewizard-dt/thought-cloud',
-    imageUrl: '/images/thought-cloud-10x.gif'
+    cardImageUrl: '/images/thought-cloud-10x.gif',
+    packages: ['Express', 'MongoDB', 'Mongoose', 'Faker'],
+    skills: ['RESTful routes', 'NoSQL database models', 'Database administration'],
   },
   {
     name: 'Weather Everywhere',
     description: 'View current weather and five-day forecast for any place on Earth. Recent searches are cached using localStorage.',
-    projectType: 'web page',
+    projectType: 'front end',
     repoUrl: 'https://github.com/codewizard-dt/open-weather-dashboard',
     deployedUrl: 'https://codewizard-dt.github.io/open-weather-dashboard/',
-    imageUrl: '/images/weather.png',
-    imagePos: 'center top'
+    cardImageUrl: '/images/weather.png',
+    cardImagePos: 'center top',
+    packages: ['jQuery', 'Bootstrap', 'Moment'],
+    skills: ['API calls', 'Integrating multiple APIs', 'HTML templates'],
+    apis: ['GeoDB Cities API', 'OpenWeather One Call API']
   },
   {
     name: 'City Comp',
     description: 'Cost of living comparison tool that integrates three APIs, allowing a user to search for over 8000 global cities and view cost of living information.',
-    projectType: 'web page',
+    projectType: 'front end',
     deployedUrl: 'https://codewizard-dt.github.io/city-cost-comparison/',
     repoUrl: 'https://github.com/codewizard-dt/city-cost-comparison',
-    imageUrl: '/images/city-comp.jpg',
-    collaborative: true
+    cardImageUrl: '/images/city-comp.jpg',
+    collaborative: true,
+    skills: ['Asynchronous API calls', 'Responsive design', 'Data caching'],
+    packages: ['Materialize', 'jQuery'],
+    apis: ['GeoDb Cities API', 'Cost of Living and Prices API', 'Local Storage', 'Google Fonts']
   },
   {
     name: 'Getting Up RPG',
     description: 'Ugh.. Monday morning. Better get up! Your character begins in bed and faces a series of randomized existential dilemmas with uncertain outcomes on their way to the home office. Make it on time for your Zoom meeting!',
-    projectType: 'server, web page',
+    projectType: 'full stack',
     repoUrl: 'https://github.com/codewizard-dt/getting-up-rpg',
     deployedUrl: 'https://getting-up-rpg.herokuapp.com/',
-    imageUrl: '/images/getting-up.png',
-    collaborative: true
+    cardImageUrl: '/images/getting-up.png',
+    collaborative: true,
+    packages: ['Sequelize', 'Luxon', 'Express', 'MySQL', 'Handlebars'],
+    skills: ['Database models', 'Database seeds', 'HTML templates', 'RESTful routes'],
+    apis: ['MediaDevices Web API'],
   },
 ]
 

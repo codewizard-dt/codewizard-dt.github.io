@@ -2,10 +2,14 @@
   &.body
     overflow: hidden
     flex-grow: 1
-    border-left: 1px solid #d4d4d5
-    border-right: 1px solid #d4d4d5
+    border-left: 1px solid var(--dark-pink)
+    border-right: 1px solid var(--dark-pink)
+  // .item:before
+  //   width: 0
   .icon.item
     &:first-child
       margin-right: -1px
     &:last-child
       margin-left: -1px
+      &:before
+        width: 0

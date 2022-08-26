@@ -2,14 +2,19 @@
   --green: #016936
   --blue: #62dfce
   --light-blue: #DDF8F5
+  --pink: #D5C3CC
+  --dark-pink: #C4ABB8
 
 body
   background-color: var(--light-blue)
 
-.ui.card, .ui.cards>.card
-  transition: width 400ms, transform 200ms
-  &.active
-    width: 100%
+.ui.card, .ui.cards>a.card
+  transition: width 400ms, transform 400ms, box-shadow 400ms
+  border: 1px solid var(--dark-pink)
+  &:hover
+    box-shadow: 0 0 5px 2px var(--dark-pink)
+  .right.corner.label
+    border-top-right-radius: .28571429rem
   .meta
     &:not(:first-of-type)
       margin-left: 5px
@@ -17,8 +22,15 @@ body
       &.green
         color: var(--green)
 
-.ui.menu 
+.ui.menu
+  background-color: var(--pink)
+  border-color: var(--dark-pink)
+  .item
+    border-color: var(--dark-pink)
+    &:before
+      background: var(--dark-pink)
+        
   .right.menu
     a:first-of-type
       .item
-        border-left: 1px solid rgba(34,36,38,.15)
+        border-left: 1px solid var(--dark-pink)

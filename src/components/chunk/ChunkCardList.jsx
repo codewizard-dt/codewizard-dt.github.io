@@ -10,8 +10,10 @@ const ChunkCardList = ({ list, chunkSize = 4, className = '', header, renderCard
   className += ' chunk list';
   return (
     <div className={className}>
-      {header && <Header content={header} />}
-      <ChunkNavBar chunks={chunks} chunkSize={chunkSize} chunkIndex={chunkIndex} setChunkIndex={setChunkIndex} />
+      <div className="chunk nav header">
+        {header && <Header content={header} />}
+        <ChunkNavBar chunks={chunks} chunkSize={chunkSize} chunkIndex={chunkIndex} setChunkIndex={setChunkIndex} />
+      </div>
       <Card.Group stackable itemsPerRow={2}>
         {chunks.length ? chunks[chunkIndex].map((item, i) => renderCard(item, i)) : <Card content={<Card.Content content={emptyMessage || 'No results'} />} />}
       </Card.Group>
