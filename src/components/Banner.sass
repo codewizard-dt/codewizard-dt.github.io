@@ -1,0 +1,68 @@
+
+figure.splash 
+  position: relative
+  height: 300px
+  width: calc(100% + 6em)
+  margin: 0 -3em
+  overflow: hidden
+  z-index: -1
+  transform: translateY(-4em)
+  > img:not(.avatar) 
+    position: relative
+    top: 50%
+    transform: translateY(-50%)
+  > figcaption 
+    position: absolute
+    padding: 0.5em
+    font-size: 2rem
+    right: 1rem
+    bottom: 2rem
+    background-color: var(--blue)
+    box-shadow: 3px 3px 10px 3px var(--blue)
+    z-index: 2
+  div.avatar 
+    position: absolute
+    background-image: url(../../public/images/avatar.jpg)
+    background-size: auto 300px
+    background-repeat: no-repeat
+    background-position: right
+    height: 200%
+    width: 560px
+    border-radius: 50%
+    box-shadow: 0px 0px 10px var(--blue)
+    z-index: 1
+    top: 50%
+    transform: translate(-50%,-50%)
+
+
+// /* Background image */
+// figure.splash > img:not(.avatar) 
+//   position: relative
+//   top: 50%
+//   transform: translateY(-50%)
+
+// /* Splash Caption */
+// figure.splash > figcaption 
+//   position: absolute
+//   padding: 0.5rem
+//   font-size: 1.5rem
+//   right: 1rem
+//   bottom: 2rem
+//   background-color: var(--blue)
+//   z-index: 2
+
+/* Avatar image */
+// figure div.avatar 
+//   position: absolute
+//   background-image: url(./images/avatar.jpg)
+//   background-size: auto 300px
+//   background-repeat: no-repeat
+//   background-position: right
+//   height: 200%
+//   width: 560px
+//   border-radius: 50%
+//   box-shadow: 0px 0px 10px var(--blue)
+//   z-index: 1
+//   top: 50%
+//   transform: translate(-50%,-50%)
+

@@ -1,17 +1,15 @@
 import { useState } from 'react';
 import { Card } from 'semantic-ui-react';
+import ChunkCardList from '../chunk/ChunkCardList';
 import ProjectListItem from './ProjectListItem';
 
 const ProjectList = ({ projects }) => {
-  const [active, setActive] = useState(null)
-  const handleClick = (i) => {
-    active === i ? setActive(null) : setActive(i)
-  }
-
+  const renderCard = (project, i) => <ProjectListItem key={i} project={project} />
+  return <ChunkCardList list={projects} renderCard={renderCard} />
   return (
     <Card.Group className='two'>
       {projects.map((project, i) =>
-        <ProjectListItem key={i} project={project} active={active === i} onClick={() => handleClick(i)} />)}
+        <ProjectListItem key={i} project={project} />)}
     </Card.Group>
   )
 }

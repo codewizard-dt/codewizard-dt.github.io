@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom"
-import { Card, Image } from "semantic-ui-react"
+import { Card, Image, Label, Popup } from "semantic-ui-react"
+import CardImage from "../CardImage"
 
 const ProjectListItem = ({ project, active, onClick }) => {
   const {
@@ -8,21 +9,24 @@ const ProjectListItem = ({ project, active, onClick }) => {
     repoUrl,
     deployedUrl,
     imageUrl,
+    imagePos,
+    host,
     packages,
     skills,
     collaborative,
   } = project
 
   const renderMeta = () => {
-    if (deployedUrl) {
-      let host = deployedUrl.match(/(github|heroku)/)[0]
-      return <Card.Meta>Deployed - {host[0].toUpperCase() + host.slice(1)}</Card.Meta>
-    }
+    if (host) return <Card.Meta>Deployed - {host}</Card.Meta>
+  }
+  const renderBadge = () => {
+    if (collaborative) return <Popup content='Collaborative Project' trigger={<Label corner='right' color="yellow" icon="users" />} />
   }
 
   return (
     <Card href={`/projects/${project.slug}`} >
-      {imageUrl && <Image src={imageUrl} />}
+      {renderBadge()}
+      {imageUrl && <CardImage src={imageUrl} pos={imagePos} />}
       <Card.Content>
         <Card.Header>
           {name}

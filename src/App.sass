@@ -1,8 +1,13 @@
 :root
   --green: #016936
+  --blue: #62dfce
+  --light-blue: #DDF8F5
+
+body
+  background-color: var(--light-blue)
 
 .ui.card, .ui.cards>.card
-  transition: width 400ms
+  transition: width 400ms, transform 200ms
   &.active
     width: 100%
   .meta
@@ -11,3 +16,9 @@
     .link
       &.green
         color: var(--green)
+
+.ui.menu 
+  .right.menu
+    a:first-of-type
+      .item
+        border-left: 1px solid rgba(34,36,38,.15)

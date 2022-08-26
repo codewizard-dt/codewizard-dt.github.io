@@ -9,7 +9,7 @@ const Project = ({ projects }) => {
 
   useEffect(() => {
     setProject(projects.find(proj => proj.slug === nameSlug))
-  }, [nameSlug])
+  }, [projects, nameSlug])
 
   if (!project) return <Loading />
   return (
