@@ -11,11 +11,11 @@ const NavBar = (props) => {
         <Menu.Item id="nav-name">David Taylor</Menu.Item>
       </NavLink>
       <Menu.Menu position="right">
-        <NavLink to="/" >
-          <Menu.Item active={pathname === "/"} >Projects</Menu.Item>
+        <NavLink to="/">
+          <Menu.Item active={pathname === "/"}>About</Menu.Item>
         </NavLink>
-        <NavLink to="/about">
-          <Menu.Item active={pathname === "/about"}>About</Menu.Item>
+        <NavLink to="/projects" >
+          <Menu.Item active={pathname === "/projects"} >Projects</Menu.Item>
         </NavLink>
         <NavLink to="/contact">
           <Menu.Item active={pathname === "/contact"}>Contact</Menu.Item>

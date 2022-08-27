@@ -3,11 +3,29 @@
     margin-bottom: -3em
   .ui.horizontal.list
     > .item
-      padding: 3px 5px !important
-      margin-left: 0
+      position: relative
+      padding: 4px 6px !important
+      margin: 4px !important
       margin-right: 5px
       background-color: var(--pink)
       border-radius: 3px
       border: 1px solid var(--dark-pink)
-      
+      overflow: hidden
+      transition: transform 400ms, background-color 400ms
+      &:before
+        content: ' '
+        position: absolute
+        display: block
+        top: 0
+        left: 0
+        bottom: 0
+        right: 0
+        background: transparent
+        transition: background 400ms
+        z-index: 1
+      &:hover
+        transform: translateY(-1px)
+        &:before
+          background: rgba(255,255,255,0.2)
+
         

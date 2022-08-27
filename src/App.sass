@@ -26,7 +26,10 @@ body
   background-color: var(--pink)
   border-color: var(--dark-pink)
   .item
+    transition: background-color 400ms
     border-color: var(--dark-pink)
+    &:hover
+      background: rgba(0,0,0,0.05)
     &:before
       background: var(--dark-pink)
         
