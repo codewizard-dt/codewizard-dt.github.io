@@ -1,6 +1,7 @@
 import React from 'react'
 import Home from './pages/Home'
 import './App.sass'
+import './Animations.sass'
 import { Routes, Route, BrowserRouter } from 'react-router-dom'
 import Project from './pages/Project'
 import projects from './data/projects';

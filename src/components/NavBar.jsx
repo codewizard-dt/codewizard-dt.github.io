@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
-import { NavLink, useLocation } from "react-router-dom"
-import { Item, List, Menu } from "semantic-ui-react"
+import { Link, NavLink, useLocation } from "react-router-dom"
+import { Image, Item, List, Menu } from "semantic-ui-react"
 import useMediaQuery from "../hooks/useMediaQuery"
 import './NavBar.sass'
 
@@ -12,7 +12,9 @@ const NavBar = (props) => {
 
   return (
     <Menu className={shouldCollapse ? 'collapsible' : 'expanded'}>
-      <Menu.Item id="nav-name">David Taylor</Menu.Item>
+      <Link to="/">
+        <Menu.Item id="nav-name"><Image src="/images/icon-pink.png" /> David Taylor</Menu.Item>
+      </Link>
       {shouldCollapse
         ? <>
           <Menu.Menu position="right">

@@ -6,7 +6,7 @@
     bottom: 0
     right: 0
     opacity: 0
-    border: 1px solid var(--dark-pink)
+    border: 1px solid var(--pink)
     border-radius: 0 0 0.25rem 0.25rem
     transform: translateY(100%) scale(0)
     transform-origin: top right
@@ -16,26 +16,32 @@
       opacity: 1
     a:not(:last-of-type)
       display: block
-      border-bottom: 1px solid var(--dark-pink)
+      border-bottom: 1px solid var(--pink)
       .item
         justify-content: center
     
-
 .ui.menu, .list.sub-menu
-  background-color: var(--pink)
-  border-color: var(--dark-pink)
+  background-color: var(--light-pink)
+  border-color: var(--pink)
   #nav-name
     background: rgba(255,255,255,0.3)
     font-weight: 700
+    color: var(--dark-pink)
+    .image
+      height: 1.5em
+      margin: -1em 0.5rem -1em -0.5rem
+    &:hover
+      .image
+        animation: 200ms wiggle 2
+
   .item
     transition: background-color 400ms
-    border-color: var(--dark-pink)
+    border-color: var(--pink)
     &:hover:not(#nav-name)
       background: rgba(0,0,0,0.05)
     &:before
-      background: var(--dark-pink)
-        
+      background: var(--pink)
   .right.menu
     a:first-of-type
       .item
-        border-left: 1px solid var(--dark-pink)
+        border-left: 1px solid var(--pink)

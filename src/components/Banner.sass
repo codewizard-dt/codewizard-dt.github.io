@@ -4,10 +4,13 @@ figure.splash
   height: 300px
   width: 100%
   margin: 0 0 -2em
-  background-size: cover
   background-position: center
   background-repeat: no-repeat
-  overflow: hidden
+  background-size: cover
+  background-color: rgba(255,255,255,0.6)
+  overflow: visible
+
+  // overflow: hidden
   border-radius: .28571429rem 
   border: 1px solid rgba(90,90,90,0.3)
   z-index: -1
@@ -17,20 +20,46 @@ figure.splash
     width: 100%
     top: 50%
     transform: translateY(-50%)
-  > figcaption 
+  > .ui.label
     position: absolute
-    padding: 0.5em
-    font-size: 2rem
-    right: 1rem
-    bottom: 2rem
-    background-color: var(--blue)
-    // box-shadow: 0px 0px 10px 3px var(--blue)
-    border: 1px solid rgba(90,90,90,0.4)
-    border-radius: .28571429rem 
     z-index: 2
-    &.label
-      right: unset
-      bottom: unset
+    background-color: var(--light-blue)
+    border: 3px solid var(--dark-blue)
+    color: var(--dark-blue)
+    box-sizing: border-box
+    margin-right: -2px
+    width: max-content
+    max-width: 95%
+    min-width: unset
+    font-size: 2em
+    bottom: 1em
+    // top: 1em
+    left: calc(100% + 0.4em)
+    padding-right: 1.2em
+    &:after
+      border-width: 0.6em 0.4em 0 0
+      right: -3px
+      top: calc(100% + 3px)
+
+  // > figcaption 
+  //   position: absolute
+  //   padding: 0.5em
+  //   font-size: 2rem
+  //   right: 1rem
+  //   bottom: 2rem
+  //   background-color: var(--blue)
+  //   // box-shadow: 0px 0px 10px 3px var(--blue)
+  //   border: 1px solid rgba(90,90,90,0.4)
+  //   border-radius: .28571429rem 
+  //   z-index: 2
+  //   &.label
+  //     right: unset
+  //     bottom: unset
+  div.roundedWrapper
+    position: relative
+    height: 298px
+    width: 100%
+    overflow: hidden
   div.rounded 
     position: absolute
     // background-image: url(../../public/images/rounded.jpg)
@@ -45,3 +74,6 @@ figure.splash
     top: 50%
     transform: translate(-50%,-50%)
 
+  figure.splash
+
+      

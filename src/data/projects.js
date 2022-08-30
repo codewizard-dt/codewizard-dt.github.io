@@ -64,10 +64,10 @@ const projects = [
     cardImageUrl: '/images/use-form-hook-contain.png',
     pageImageStyle: { backgroundSize: 'contain' },
     packages: ['React', 'Semantic UI', 'Storybook', 'Rollup', 'Webpack', 'Lodash', 'Typescript'],
-    skills: ['Type definitions', 'Testing', 'Package bundling', 'Package publishing'],
+    skills: ['Form Validation', 'Type definitions', 'Testing', 'Package bundling', 'Package publishing'],
   },
   {
-    name: 'Team Dashboard',
+    name: 'HTML Dashboard Generator',
     description: 'A CLI tool that gathers user input and generates an HTML dashboard. Users can enter information for Managers, Engineers, and Interns which is subsequently displayed as cards on the dashboard',
     projectType: 'command line',
     repoUrl: 'https://github.com/codewizard-dt/team-dash-generator',
@@ -81,7 +81,7 @@ const projects = [
     name: 'E-Commerce Backend',
     description: 'An Express server using Sequelize ORM to manage Products, Categories, and Product Tags, using RESTful API routes for MySQL CRUD operations',
     projectType: 'back end',
-    repoUrl: 'https://github.com/codewizard-dt/e-commerce-orm-backend',
+    repoUrl: 'https://github.com/codewizard-dt/e-commerce-orm-back end',
     demoUrl: 'https://drive.google.com/file/d/1AyjUarVAmr_jwiv7Ttbu0q6_UiHei-2_/view?usp=sharing',
     cardImageUrl: '/images/e-commerce-orm-10x.gif',
     packages: ['Express', 'MySQL', 'Sequelize', 'Insomnia'],
@@ -110,7 +110,7 @@ const projects = [
   {
     name: 'Thought Cloud',
     description: `Thought Cloud is an Express server with a RESTful API that allows users to post their "thoughts" and give their "reactions" to other people's thoughts.`,
-    projectType: 'backend',
+    projectType: 'back end',
     repoUrl: 'https://github.com/codewizard-dt/thought-cloud',
     cardImageUrl: '/images/thought-cloud-10x.gif',
     packages: ['Express', 'MongoDB', 'Mongoose', 'Faker'],
@@ -124,7 +124,7 @@ const projects = [
     deployedUrl: 'https://codewizard-dt.github.io/open-weather-dashboard/',
     cardImageUrl: '/images/weather.png',
     cardImagePos: 'center top',
-    pageImageStyle: { top: '1.5rem', transform: 'unset' },
+    pageImageStyle: { backgroundSize: 'contain' },
     packages: ['jQuery', 'Bootstrap', 'Moment'],
     skills: ['API calls', 'Integrating multiple APIs', 'HTML templates'],
     apis: ['GeoDB Cities API', 'OpenWeather One Call API']
@@ -154,5 +154,12 @@ const projects = [
     apis: ['MediaDevices Web API'],
   },
 ]
+
+export const typeMap = {}
+for (let { projectType } of projects) {
+  if (typeMap[projectType]) typeMap[projectType]++
+  else typeMap[projectType] = 1
+}
+
 
 export default projects.map(project => Project.create(project))

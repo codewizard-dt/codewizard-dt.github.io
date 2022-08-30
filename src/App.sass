@@ -1,23 +1,28 @@
 :root
   --green: #016936
-  --blue: #62dfce
   --light-blue: #DDF8F5
-  --pink: #D5C3CC
-  --dark-pink: #C4ABB8
+  --blue: #62dfce
+  --dark-blue: #23A997
+  --blue-text: #15665B
+  --light-pink: #D5C3CC
+  --pink: #C4ABB8
+  --dark-pink: #835D71
 
 body
   background-color: var(--light-blue)
 
-.ui.card, .ui.cards>a.card
-  transition: width 400ms, transform 400ms, box-shadow 400ms
-  border: 1px solid var(--dark-pink)
-  overflow: hidden
-  &:hover
-    box-shadow: 0 0 5px 2px var(--dark-pink)
-  .right.corner.label
-  .meta
-    &:not(:first-of-type)
-      margin-left: 5px
-    .link
-      &.green
-        color: var(--green)
+#root
+  .ui.card, .ui.cards>a.card
+    transition: width 400ms, transform 400ms, box-shadow 400ms
+    border: 1px solid var(--pink)
+    overflow: hidden
+    &:hover
+      box-shadow: 0 0 5px 2px var(--pink)
+      z-index: inherit
+    .right.corner.label
+    .meta
+      &:not(:first-of-type)
+        margin-left: 5px
+      .link
+        &.green
+          color: var(--green)

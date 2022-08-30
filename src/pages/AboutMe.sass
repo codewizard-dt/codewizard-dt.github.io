@@ -4,7 +4,7 @@
   .segment
     .grid
       .column
-        box-shadow: -1px 0 0 0 var(--pink)
+        box-shadow: -1px 0 0 0 var(--light-pink)
         &:first-child
           padding-bottom: 0 !important
     .header
@@ -13,13 +13,12 @@
       padding-left: 1em
       float: right
       vertical-align: top
-      border-bottom: 2px solid var(--dark-pink)
+      border-bottom: 2px solid var(--pink)
   .ui.list, .ui.horizontal.list
     display: flex
     flex-flow: row wrap
     margin: 0.25em 0
     gap: 4px
-    // width: calc(100% - 250px)
     > .item
       position: relative
       font-size: 1.1rem
@@ -27,9 +26,9 @@
       margin: 0px !important
       align-items: center
       display: inline-flex
-      background-color: var(--pink)
+      background-color: var(--light-pink)
       border-radius: 3px
-      border: 1px solid var(--dark-pink)
+      border: 1px solid var(--pink)
       overflow: hidden
       transition: transform 400ms, background-color 400ms
       > .icon
@@ -59,10 +58,3 @@
         &:before
           background: rgba(255,255,255,0.2)
 
-@keyframes wiggle
-  25%
-    transform: rotate(15deg)
-  75%
-    transform: rotate(-15deg)
-  // .ui.list .list>.item>.icon+.content, .ui.list .list>.item>.image+.content, .ui.list>.item>.icon+.content, .ui.list>.item>.image+.content
-        
