@@ -11,7 +11,7 @@ const ChunkCardList = ({ list, chunkSize = 4, className = '', header, renderCard
   return (
     <div className={className}>
       <div className="chunk nav header">
-        {header && <Header content={header} />}
+        {header && <Header as="h1" content={header} />}
         <ChunkNavBar chunks={chunks} chunkSize={chunkSize} chunkIndex={chunkIndex} setChunkIndex={setChunkIndex} />
       </div>
       <Card.Group stackable itemsPerRow={2}>

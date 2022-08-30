@@ -1,8 +1,10 @@
-const Resume = (props) => {
+import { Container, Header } from "semantic-ui-react"
+
+const Resume = ({ projects }) => {
   return (
-    <div>
-      Resume
-    </div>
+    <Container>
+      <Header>Resume</Header>
+    </Container>
   )
 }
 

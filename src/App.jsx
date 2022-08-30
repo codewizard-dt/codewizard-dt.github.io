@@ -17,16 +17,16 @@ function App() {
     <Container>
       <BrowserRouter>
         <NavBar />
-        <Container>
+        <div>
           <Routes>
             <Route path="/" element={<AboutMe />} />
             <Route path="projects" element={<Home projects={projects} />} />
             <Route path="contact" element={<Contact />} />
-            <Route path="resume" element={<Resume />} />
+            <Route path="resume" element={<Resume projects={projects} />} />
             <Route path="projects/:name" element={<Project projects={projects} />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
-        </Container>
+        </div>
         <Footer />
       </BrowserRouter>
     </Container>

@@ -1,17 +1,46 @@
 #about
   .splash
     margin-bottom: -3em
-  .ui.horizontal.list
+  .segment
+    .grid
+      .column
+        box-shadow: -1px 0 0 0 var(--pink)
+        &:first-child
+          padding-bottom: 0 !important
+    .header
+      margin: 0.25em 0
+      width: max-content
+      padding-left: 1em
+      float: right
+      vertical-align: top
+      border-bottom: 2px solid var(--dark-pink)
+  .ui.list, .ui.horizontal.list
+    display: flex
+    flex-flow: row wrap
+    margin: 0.25em 0
+    gap: 4px
+    // width: calc(100% - 250px)
     > .item
       position: relative
-      padding: 4px 6px !important
-      margin: 4px !important
-      margin-right: 5px
+      font-size: 1.1rem
+      padding: 6px 20px 6px 6px !important
+      margin: 0px !important
+      align-items: center
+      display: inline-flex
       background-color: var(--pink)
       border-radius: 3px
       border: 1px solid var(--dark-pink)
       overflow: hidden
       transition: transform 400ms, background-color 400ms
+      > .icon
+        display: inline-block
+        font-size: 1.5em
+        line-height: 1
+        flex-shrink: 0
+        width: 2em
+      > .icon + .content
+        width: unset
+        padding-left: 0.25em
       &:before
         content: ' '
         position: absolute
@@ -24,8 +53,16 @@
         transition: background 400ms
         z-index: 1
       &:hover
-        transform: translateY(-1px)
+        transform: translateY(-2px)
+        > .icon
+          animation: 400ms wiggle  2
         &:before
           background: rgba(255,255,255,0.2)
 
+@keyframes wiggle
+  25%
+    transform: rotate(15deg)
+  75%
+    transform: rotate(-15deg)
+  // .ui.list .list>.item>.icon+.content, .ui.list .list>.item>.image+.content, .ui.list>.item>.icon+.content, .ui.list>.item>.image+.content
         

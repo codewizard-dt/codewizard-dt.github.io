@@ -31,22 +31,18 @@ const Project = ({ projects }) => {
     let i = projects.indexOf(project)
     let next = projects[i === projects.length - 1 ? 0 : i + 1]
     let prev = projects[i === 0 ? projects.length - 1 : i - 1]
-
     return (
-      <>
-        <Button.Group floated="right">
-          <Popup content="Back To List" trigger={<Button onClick={() => navigate(`/`)} icon='list' />} />
-          <Popup content={prev.name} trigger={<Button onClick={() => navigate(`/projects/${prev.slug}`)} icon="angle left" />} />
-          <Popup content={next.name} trigger={<Button onClick={() => navigate(`/projects/${next.slug}`)} icon="angle right" />} />
-        </Button.Group>
-
-      </>
+      <Button.Group floated="right">
+        <Popup content="Back To List" trigger={<Button onClick={() => navigate(`/`)} icon='list' />} />
+        <Popup content={prev.name} trigger={<Button onClick={() => navigate(`/projects/${prev.slug}`)} icon="angle left" />} />
+        <Popup content={next.name} trigger={<Button onClick={() => navigate(`/projects/${next.slug}`)} icon="angle right" />} />
+      </Button.Group>
     )
   }
 
   return (
-    <Container id="project">
-      <Banner bgImgSrc={project.pageImageUrl || project.cardImageUrl} caption={project.name} />
+    <div id="project">
+      <Banner bgImgSrc={project.pageImageUrl || project.cardImageUrl} bgImgStyle={project.pageImageStyle} caption={project.name} label />
       <Header as='h2'  >
         {project.collaborative ? 'Collaborative' : 'Solo'} Project
         {renderNavButtons()}
@@ -89,7 +85,7 @@ const Project = ({ projects }) => {
           </Segment>
         }
       </Segment.Group>
-    </Container>
+    </div>
   )
 }
 

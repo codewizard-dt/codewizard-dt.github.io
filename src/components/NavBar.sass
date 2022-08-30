@@ -1,0 +1,41 @@
+.ui.menu
+  position: relative
+  .sub-menu
+    position: absolute
+    z-index: 2
+    bottom: 0
+    right: 0
+    opacity: 0
+    border: 1px solid var(--dark-pink)
+    border-radius: 0 0 0.25rem 0.25rem
+    transform: translateY(100%) scale(0)
+    transform-origin: top right
+    transition: transform 400ms, opacity 400ms
+    &.expanded
+      transform: translateY(100%) scale(1)
+      opacity: 1
+    a:not(:last-of-type)
+      display: block
+      border-bottom: 1px solid var(--dark-pink)
+      .item
+        justify-content: center
+    
+
+.ui.menu, .list.sub-menu
+  background-color: var(--pink)
+  border-color: var(--dark-pink)
+  #nav-name
+    background: rgba(255,255,255,0.3)
+    font-weight: 700
+  .item
+    transition: background-color 400ms
+    border-color: var(--dark-pink)
+    &:hover:not(#nav-name)
+      background: rgba(0,0,0,0.05)
+    &:before
+      background: var(--dark-pink)
+        
+  .right.menu
+    a:first-of-type
+      .item
+        border-left: 1px solid var(--dark-pink)

@@ -12,6 +12,7 @@ class Project {
       demoUrl = null,
       cardImageUrl = null,
       pageImageUrl = null,
+      pageImageStyle = { backgroundSize: 'cover' },
       packages,
       apis,
       skills,
@@ -33,7 +34,7 @@ class Project {
     this.cardImageUrl = cardImageUrl
     this.cardImagePos = options.cardImagePos
     this.pageImageUrl = pageImageUrl
-    this.pageImagePos = options.pageImagePos
+    this.pageImageStyle = pageImageStyle
     this.packages = packages
     this.apis = apis
     this.skills = skills
@@ -61,6 +62,7 @@ const projects = [
     repoUrl: 'https://github.com/codewizard-dt/use-form-hook',
     deployedUrl: 'https://www.npmjs.com/package/@codewizard-dt/use-form-hook',
     cardImageUrl: '/images/use-form-hook-contain.png',
+    pageImageStyle: { backgroundSize: 'contain' },
     packages: ['React', 'Semantic UI', 'Storybook', 'Rollup', 'Webpack', 'Lodash', 'Typescript'],
     skills: ['Type definitions', 'Testing', 'Package bundling', 'Package publishing'],
   },
@@ -122,6 +124,7 @@ const projects = [
     deployedUrl: 'https://codewizard-dt.github.io/open-weather-dashboard/',
     cardImageUrl: '/images/weather.png',
     cardImagePos: 'center top',
+    pageImageStyle: { top: '1.5rem', transform: 'unset' },
     packages: ['jQuery', 'Bootstrap', 'Moment'],
     skills: ['API calls', 'Integrating multiple APIs', 'HTML templates'],
     apis: ['GeoDB Cities API', 'OpenWeather One Call API']

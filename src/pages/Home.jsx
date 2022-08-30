@@ -10,10 +10,10 @@ function sortByCollab(project1, project2) {
 
 function Home({ projects }) {
   return (
-    <Container>
+    <div>
       <Banner bgImgSrc="/images/analytics.jpeg" roundedImgSrc='/images/avatar.jpg' caption='Full Stack Dev' />
       <ProjectList projects={projects.sort(sortByCollab)} />
-    </Container>
+    </div>
   )
 }
 
