@@ -33,7 +33,7 @@ const Project = ({ projects }) => {
     let prev = projects[i === 0 ? projects.length - 1 : i - 1]
     return (
       <Button.Group floated="right">
-        <Popup content="Back To List" trigger={<Button onClick={() => navigate(`/`)} icon='list' />} />
+        <Popup content="Back To List" trigger={<Button onClick={() => navigate(`/projects`)} icon='list' />} />
         <Popup content={prev.name} trigger={<Button onClick={() => navigate(`/projects/${prev.slug}`)} icon="angle left" />} />
         <Popup content={next.name} trigger={<Button onClick={() => navigate(`/projects/${next.slug}`)} icon="angle right" />} />
       </Button.Group>

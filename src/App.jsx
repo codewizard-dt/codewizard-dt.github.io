@@ -1,5 +1,5 @@
 import React from 'react'
-import Home from './pages/Home'
+import Projects from './pages/Projects'
 import './App.sass'
 import './Animations.sass'
 import { Routes, Route, BrowserRouter } from 'react-router-dom'
@@ -21,7 +21,7 @@ function App() {
         <div>
           <Routes>
             <Route path="/" element={<AboutMe />} />
-            <Route path="projects" element={<Home projects={projects} />} />
+            <Route path="projects" element={<Projects projects={projects} />} />
             <Route path="contact" element={<Contact />} />
             <Route path="resume" element={<Resume projects={projects} />} />
             <Route path="projects/:name" element={<Project projects={projects} />} />

@@ -13,7 +13,7 @@ const NavBar = (props) => {
   return (
     <Menu className={shouldCollapse ? 'collapsible' : 'expanded'}>
       <Link to="/">
-        <Menu.Item id="nav-name"><Image src="/images/icon-pink.png" /> David Taylor</Menu.Item>
+        <Menu.Item id="nav-name"><Image src="/images/logo-pink.png" /> David Taylor</Menu.Item>
       </Link>
       {shouldCollapse
         ? <>

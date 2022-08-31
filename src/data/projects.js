@@ -161,5 +161,14 @@ for (let { projectType } of projects) {
   else typeMap[projectType] = 1
 }
 
+const projectTypeMap = {
+  'full stack': 3,
+  'front end': 2,
+  'back end': 1
+}
+
+export const projectTypeSort = (t1, t2) => {
+  return (projectTypeMap[t2] || 0) - (projectTypeMap[t1] || 0)
+}
 
 export default projects.map(project => Project.create(project))
