@@ -3,7 +3,7 @@ import { useState } from "react"
 import { Link } from "react-router-dom"
 import { Header, Icon } from "semantic-ui-react"
 import contactFormPost from "../utils/contactFormPost"
-
+import './Contact.sass'
 
 const Contact = (props) => {
   const { Form } = useForm()
@@ -18,7 +18,7 @@ const Contact = (props) => {
     }
   }
   return (
-    <div>
+    <div id="contact">
       <FormProvider>
 
         <Header as="h1">
@@ -26,7 +26,7 @@ const Contact = (props) => {
           Contact Form
           <Header.Subheader>Created with my <Link to="/projects/react-form-handler-package">React Forms package</Link>  </Header.Subheader>
         </Header>
-        <p>Please send me a message if you're interested in any of my work!</p>
+        <Header as='h3'>Please send me a message if you're interested in any of my work!</Header>
         <Form submit={submit} display={submitted ? 'disabled' : 'edit'} successMessage="Thank you! Message sent!" fields={[
           { name: 'name', required: true },
           { name: 'email', required: true },

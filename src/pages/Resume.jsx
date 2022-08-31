@@ -1,16 +1,37 @@
-import { Button, Card, Container, Grid, Header, Icon, Label, List, Segment, SegmentGroup } from "semantic-ui-react"
+import { Button, Card, Header, List, Modal, Segment } from "semantic-ui-react"
+import { Document, Page } from 'react-pdf'
 import './Resume.sass'
+import { useState } from "react"
 
 const Resume = ({ projects }) => {
-  const tabs = [
-    { menuItem: 'St' }
-  ]
+  const [open, setOpen] = useState(false)
+
+  const toggleModalBtn = (
+    <Modal
+      id="resume-modal"
+      onClose={() => setOpen(false)}
+      onOpen={() => setOpen(true)}
+      open={open}
+      trigger={<Button primary floated="right" icon='file pdf outline' content="PDF" />}
+    >
+      <Modal.Header as="h1">
+        Resume PDF
+        <Button icon='x' color="red" floated="right" onClick={() => setOpen(false)} />
+        <Button as="a" href="/assets/resume-david-taylor.pdf" download primary floated="right" icon='download' content='Download' />
+      </Modal.Header>
+      <Modal.Content>
+        <Document file="/assets/resume-david-taylor.pdf">
+          <Page pageNumber={1} w />
+        </Document>
+      </Modal.Content>
+    </Modal>
+  )
 
   return (
     <div id="resume">
       <Header as='h1'>
         Professional Resumé
-        <Button as="a" href="/assets/resume-david-taylor.pdf" download primary floated="right" icon='file pdf outline' content='PDF' />
+        {toggleModalBtn}
       </Header>
       <Segment id="personal-statement" basic>
         <p>Ambitious and flexible problem solver with over 5 years experience in analyzing complex systems and building solutions. Seeking a developer role to apply my attention to detail and to collaborate with the goal of creating innovative and reliable solutions to technical problems.</p>

@@ -4,9 +4,7 @@
     margin-top: -1.5rem
     padding: 4rem 5px 1rem
     background: linear-gradient(rgba(90,90,90,0.2), transparent)
-    // border-bottom: 3px solid linear-gradient(var(--pink),var(--light-pink))
-  .segment
-    border-top: 1px solid var(--pink)
+    border-bottom: 1px solid var(--pink)
   .ui.card
     &:after
       position: absolute
@@ -24,6 +22,16 @@
       &:after
         display: inline-block
         animation: slide 1s cubic-bezier(.33,.52,.36,.98) forwards, fadeout 1s cubic-bezier(.33,.52,.36,.98) forwards      
+
+#resume-modal
+  &.ui.modal
+    & > .header, & > .content
+      background: var(--light-blue)
+  .react-pdf__Page__canvas
+    margin: auto
+
+  .react-pdf__Page__textContent, .react-pdf__Page__annotations
+    display: none
 
 #personal-statement
   font-size: 1.1em
