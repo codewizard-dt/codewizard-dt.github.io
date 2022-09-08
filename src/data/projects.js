@@ -130,16 +130,17 @@ const projects = [
     apis: ['GeoDB Cities API', 'OpenWeather One Call API']
   },
   {
-    name: 'City Comp',
-    description: 'Cost of living comparison tool that integrates three APIs, allowing a user to search for over 8000 global cities and view cost of living information.',
-    projectType: 'front end',
-    deployedUrl: 'https://codewizard-dt.github.io/city-cost-comparison/',
-    repoUrl: 'https://github.com/codewizard-dt/city-cost-comparison',
-    cardImageUrl: '/images/city-comp.jpg',
+    name: 'Get Lit',
+    description: 'A book app for book lovers! Save your favorites, create book lists, create book clubs, and write reviews',
+    projectType: 'full stack',
+    repoUrl: 'https://github.com/SierraNN/Get-Lit',
+    deployedUrl: 'https://get-lit-book-clubs.herokuapp.com/',
+    cardImageUrl: '/images/get-lit-icon.png',
+    cardImagePos: 'center bottom',
     collaborative: true,
-    skills: ['Asynchronous API calls', 'Responsive design', 'Data caching'],
-    packages: ['Materialize', 'jQuery'],
-    apis: ['GeoDb Cities API', 'Cost of Living and Prices API', 'Local Storage', 'Google Fonts']
+    packages: ['Mongoose', 'Express', 'GraphQL', 'MongoDB', 'ApolloQL', 'Handlebars'],
+    skills: ['Database models', 'Database seeds', 'HTML templates', 'GraphQL routes'],
+    apis: ['Google Books API', 'Local Storage'],
   },
   {
     name: 'Getting Up RPG',
@@ -152,6 +153,18 @@ const projects = [
     packages: ['Sequelize', 'Luxon', 'Express', 'MySQL', 'Handlebars'],
     skills: ['Database models', 'Database seeds', 'HTML templates', 'RESTful routes'],
     apis: ['MediaDevices Web API'],
+  },
+  {
+    name: 'City Comp',
+    description: 'Cost of living comparison tool that integrates three APIs, allowing a user to search for over 8000 global cities and view cost of living information.',
+    projectType: 'front end',
+    deployedUrl: 'https://codewizard-dt.github.io/city-cost-comparison/',
+    repoUrl: 'https://github.com/codewizard-dt/city-cost-comparison',
+    cardImageUrl: '/images/city-comp.jpg',
+    collaborative: true,
+    skills: ['Asynchronous API calls', 'Responsive design', 'Data caching'],
+    packages: ['Materialize', 'jQuery'],
+    apis: ['GeoDb Cities API', 'Cost of Living and Prices API', 'Local Storage', 'Google Fonts']
   },
 ]
 
