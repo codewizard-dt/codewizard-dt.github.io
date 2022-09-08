@@ -27,7 +27,7 @@
     "postinstall": "semantic-ui-css-patch",
     "rmcache": "rm -rf node_modules/gh-pages/.cache",
     "predeploy": "npm run rmcache && npm run build",
-    "deploy": "gh-pages -d build -n && git checkout gh-pages"
+    "deploy": "gh-pages -d build -n && git checkout gh-pages && git add . && git commit -m 'auto deploy' && git push origin gh-pages"
   },
   "eslintConfig": {
     "extends": [
